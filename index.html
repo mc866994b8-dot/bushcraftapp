@@ -240,6 +240,14 @@ em.wc{color:var(--mu);font-size:10px}
 const CATEGORIES = [["Schlafen", "sleep"], ["Camp & Komfort", "camp"], ["Kochen & Essen", "cook"], ["Wasser", "water"], ["Äxte", "axe"], ["Sägen", "saw"], ["Messer & Tools", "knife"], ["Kleidung", "cloth"], ["Taschen", "bag"], ["Boot", "boat"], ["Angeln", "fish"], ["Elektronik", "elec"], ["Hygiene & Safety", "aid"]];
 const RAW_ITEMS = [["Amazonas Forest Moskito Hängematte", "Schlafen", 1, "v", 650, 2.5, "base", "ca. – Hersteller ~600–650 g"], ["Miltec Hängematte mit Netz", "Schlafen", 1, "v", 850, 3.0, "base", "ca. – noch wiegen"], ["DD Hammock Tarp 3x3", "Schlafen", 1, "v", 790, 3.1, "base", "Ohne Heringe/Leinen (mit Zubehör ~950 g)"], ["Bushcraft Spain Tarp 3x3", "Schlafen", 1, "v", 3000, 7.5, "base", "Oilskin Canvas 3×3 m"], ["Sea to Summit Moskitonetz 2P", "Schlafen", 1, "v", 137, 0.6, "base", "Nano Mosquito Pyramid Net 2P (ca.)"], ["Carinthia Defense 4", "Schlafen", 1, "v", 2000, 15.0, "base", "Größe 200 (L), Packmaß 25×32 cm"], ["Bushcraft Spain Bedroll", "Schlafen", 1, "v", 2700, 10.0, "base", "Oilskin Canvas 90 cm, ohne Decken"], ["Voited Synthetik Decke", "Schlafen", 1, "v", 1100, 5.5, "base", "Ripstop ~1100 g (CloudTouch ~1630 g)"], ["Lama Alpaka Decke", "Schlafen", 1, "v", 1400, 6.0, "base", "ca. – noch wiegen"], ["Disana Merino Decke", "Schlafen", 1, "v", 950, 4.5, "base", "ca. – je nach Größe noch wiegen"], ["Ital. Armee Decke", "Schlafen", 2, "v", 2000, 7.0, "base", "pro Stück (ca. 1900–2100 g Schurwolle)"], ["Exped SynMat 9 LW", "Schlafen", 1, "v", 1150, 4.5, "base", "KSK / LW (197×65×9 cm)"], ["Therm-a-Rest Eiermatte", "Schlafen", 2, "v", 410, 8.5, "base", "Z Lite Sol Regular pro Stück"], ["Therm-a-Rest Ridgerest", "Schlafen", 1, "v", 540, 14.0, "base", "Classic Large (Außenbefestigung)"], ["Exped UL SIM 3.8", "Schlafen", 3, "v", 910, 3.5, "base", "LW pro Stück (ca. 910 g)"], ["Billige Luftiso", "Schlafen", 1, "v", 550, 1.5, "base", "ca. – noch wiegen"], ["Elefantenhaut (Groundsheet)", "Schlafen", 1, "v", 480, 1.2, "base", "BW Nässeschutzplane (ca.)"], ["Groundsheet dünn Plastik", "Schlafen", 1, "v", 160, 0.5, "base", "Polycro / Folie (ca.)"], ["Oilskin Woll Groundsheet", "Schlafen", 1, "v", 1200, 3.5, "base", "Bushcraft Spain Oilskin & Wool (ca.)"], ["Cocoon Kopfkissen", "Schlafen", 1, "v", 110, 0.4, "base", "Air-Core Pillow (ca.)"], ["Bushcraft Spain Kashmere Kopfkissensack", "Schlafen", 1, "v", 180, 0.6, "base", "ca. – noch wiegen"], ["Nemo Moonlite Elite (Stuhl)", "Camp & Komfort", 1, "v", 660, 3.5, "base", "552 g min. / 660 g mit Packsack (32×12×9 cm)"], ["Helikon-Tex Sitzmatte", "Camp & Komfort", 1, "v", 90, 0.5, "base", "Vagabond Seat Pad"], ["Sea to Summit Wäscheleine", "Camp & Komfort", 1, "v", 25, 0.1, "base", "Lite Line Clothesline"], ["Petromax Dreibein", "Camp & Komfort", 1, "v", 4100, 4.0, "base", "d1 Dreibein (ca. 4,1 kg)"], ["Solo Stove", "Kochen & Essen", 1, "v", 255, 1.0, "base", "Solo Stove Lite (passt in Solo Pot 900)"], ["Solo Pot 900", "Kochen & Essen", 1, "v", 221, 1.3, "base", "Edelstahl 900 ml (11,4×11,9 cm)"], ["Trangia Brenner + Spiritusbehälter", "Kochen & Essen", 1, "v", 225, 0.5, "base", "Brenner 110 g + 0,5 L Sicherheitsflasche 115 g (leer)"], ["Zebra Topf 700 ml", "Kochen & Essen", 1, "v", 380, 1.0, "base", "Billy Can 10 cm Edelstahl (ca.)"], ["Eisenpfanne", "Kochen & Essen", 1, "v", 950, 2.0, "base", "ca. – je nach Durchmesser noch wiegen"], ["Petromax Kettenlappen", "Kochen & Essen", 1, "v", 160, 0.1, "base", "Ringreiniger Edelstahl"], ["Holzlöffel geschnitzt lang", "Kochen & Essen", 1, "v", 35, 0.1, "base", "Eigenbau (ca.)"], ["Holzschale selbstgebaut", "Kochen & Essen", 1, "v", 180, 0.8, "base", "Eigenbau (ca. – noch wiegen)"], ["Nestcup Grayl Pathfinder 700 ml", "Kochen & Essen", 1, "v", 240, 0.9, "base", "Edelstahl Nesting Cup (ca. 240 g)"], ["Gewürztasche", "Kochen & Essen", 1, "v", 250, 0.6, "cons", "ca. – gefüllt noch wiegen"], ["Rote Linsen 500 g", "Kochen & Essen", 1, "v", 510, 0.7, "cons", "Verbrauch (inkl. Beutel)"], ["Reis 500 g", "Kochen & Essen", 1, "v", 510, 0.7, "cons", "Verbrauch (inkl. Beutel)"], ["Instant Nudeln", "Kochen & Essen", 1, "v", 90, 0.4, "cons", "pro Packung (ca.)"], ["Nalgene 1 L", "Wasser", 1, "v", 180, 1.2, "base", "Wide Mouth 1 L (leer)"], ["Finnische Flasche 1 L", "Wasser", 2, "v", 160, 1.2, "base", "pro Stück (leer, ca.)"], ["Vapor 0.7", "Wasser", 1, "v", 35, 0.1, "base", "Faltflasche leer"], ["Katadyn Hiker Pro", "Wasser", 1, "v", 310, 0.8, "base", "Handpumpe inkl. Schläuche"], ["Ersatzfilter", "Wasser", 1, "v", 110, 0.3, "base", "Katadyn / Grayl Kartusche (ca.)"], ["Grayl Geopress", "Wasser", 1, "v", 450, 1.5, "base", "710 ml Purifier (leer)"], ["Gränsfors Forstaxt (lang)", "Äxte", 1, "v", 1200, 1.5, "base", "64 cm Stiel inkl. Lederscheide"], ["Gränsfors Spaltbeil", "Äxte", 1, "v", 1600, 1.8, "base", "Kleines Spaltbeil 60 cm (großes wäre 2400 g)"], ["Gränsfors Mini Beil", "Äxte", 1, "v", 350, 0.4, "base", "26 cm Stiel inkl. Lederscheide"], ["Gränsfors Wurfaxt", "Äxte", 1, "v", 2100, 2.5, "base", "Doppelschneidig 75 cm"], ["Nata Axt", "Äxte", 1, "v", 750, 0.8, "base", "ca. – je nach Modell noch wiegen"], ["Russische Axt", "Äxte", 1, "v", 950, 1.2, "base", "ca. – noch wiegen"], ["Leichte Taiga-/Zimmermannsaxt", "Äxte", 1, "g", 700, 1.0, "base", "Leichterer Kopf, langer dünner Stiel, Vorbild C45 (ca. 700 g)"], ["Silky Bigboy", "Sägen", 1, "v", 440, 0.6, "base", "Bigboy 2000 (36 cm Blatt)"], ["Silky 180", "Sägen", 1, "v", 220, 0.3, "base", "Gomboy/Pocketboy ~170–180 mm (ca.)"], ["Buck Saw", "Sägen", 1, "v", 480, 0.8, "base", "Klappbare Bügelsäge (ca. – noch wiegen)"], ["Mora Kansbol", "Messer & Tools", 1, "v", 134, 0.2, "base", "Inkl. Kunststoffscheide"], ["Mora Eldris", "Messer & Tools", 1, "v", 80, 0.1, "base", "Inkl. Scheide"], ["Mora Löffelmesser", "Messer & Tools", 1, "v", 65, 0.1, "base", "Hook Knife 164 inkl. Schutz"], ["Mora Schnitzmesser Carving 106", "Messer & Tools", 1, "v", 70, 0.1, "base", "Woodcarving 106 inkl. Scheide"], ["Fällkniven DC3", "Messer & Tools", 1, "v", 38, 0.1, "base", "Diamant-/Keramik-Schleifstein inkl. Lederetui"], ["Cäsström Lars Fält", "Messer & Tools", 1, "v", 260, 0.3, "base", "Fixed Blade (172 g Messer + Lederscheide)"], ["Kizer", "Messer & Tools", 1, "v", 110, 0.1, "base", "ca. – je nach Modell noch wiegen"], ["Geschmiedetes feststehendes Messer", "Messer & Tools", 1, "v", 240, 0.3, "base", "ca. – noch wiegen"], ["Opinel Filetiermesser No. 8", "Messer & Tools", 1, "v", 35, 0.1, "base", "Slim Line No. 8"], ["Victorinox mittel rot", "Messer & Tools", 1, "v", 95, 0.1, "base", "91 mm z. B. Huntsman/Camper (ca.)"], ["Neckknife", "Messer & Tools", 1, "v", 75, 0.1, "base", "ca. – noch wiegen"], ["Leatherman Rebar", "Messer & Tools", 1, "v", 190, 0.2, "base", "Multitool ohne Holster"], ["Leatherman Skeletool", "Messer & Tools", 1, "v", 142, 0.1, "base", "Multitool"], ["Knipex Zange", "Messer & Tools", 1, "v", 145, 0.1, "base", "Cobra 150/180 (ca.)"], ["Feuerstahl", "Messer & Tools", 1, "v", 55, 0.1, "base", "Army-Größe mit Schaber (ca.)"], ["Fjällräven Iso Jacke", "Kleidung", 1, "v", 580, 3.0, "base", "Gr. L (ca. – z. B. Expedition Pack/Skogsö Padded)"], ["Fjällräven Hydratic", "Kleidung", 1, "v", 460, 1.5, "base", "Regenjacke/-hose Gr. L (ca.)"], ["Fjällräven Zip-off", "Kleidung", 1, "v", 560, 1.5, "worn", "G-1000 Hose Gr. L/52 (ca.)"], ["Fjällräven Normal", "Kleidung", 1, "v", 610, 1.8, "worn", "Vidda Pro / Barents Gr. L/52 (ca.)"], ["Fjällräven Ecoshell Jacket", "Kleidung", 1, "v", 540, 1.8, "base", "Keb Eco-Shell Gr. L (ca.)"], ["Fjällräven Anorak No. 8", "Kleidung", 1, "v", 1150, 4.0, "worn", "G-1000 HD Gr. L (M = 1100 g)"], ["Helikon-Tex Level 2 Set", "Kleidung", 1, "v", 780, 2.5, "base", "Oberteil + Hose Gr. L (ca.)"], ["Poncho Plastik", "Kleidung", 1, "v", 320, 0.8, "base", "ca. – noch wiegen"], ["Neoprenhose und -socken", "Kleidung", 1, "v", 950, 3.0, "worn", "Gr. L / 44 (ca. – noch wiegen)"], ["Schwimmhose", "Kleidung", 1, "v", 160, 0.4, "base", "Gr. L (ca.)"], ["Buff Mütze", "Kleidung", 1, "v", 55, 0.2, "worn", "Merino/Microfiber Beanie"], ["Buff Schlauchschal", "Kleidung", 1, "v", 45, 0.1, "worn", "Original / Merino"], ["Stanton Hut", "Kleidung", 1, "v", 140, 1.0, "worn", "ca. – noch wiegen"], ["Shemagh", "Kleidung", 1, "v", 190, 0.6, "worn", "Baumwolltuch (ca.)"], ["Hanwag Alaska Winter", "Kleidung", 1, "v", 1780, 5.0, "worn", "Paar Gr. 44 / UK 9.5 (Gr. 8 = 1640 g)"], ["Hanwag Yukon Stiefel", "Kleidung", 1, "v", 1720, 5.0, "worn", "Paar Gr. 44 / UK 9.5 (Gr. 8 = 1620 g)"], ["Vivobarefoot Tracker Textil", "Kleidung", 1, "v", 960, 3.5, "worn", "Paar Gr. 44 (ca.)"], ["Crocs", "Kleidung", 1, "v", 380, 2.5, "base", "Classic Clog Paar Gr. 44"], ["Outdoor-Sicherheitsstiefel", "Kleidung", 1, "g", 1950, 5.5, "worn", "Arbpro Orion oder La Sportiva Nepal Work S7S GTX (Gr. 44 ca.)"], ["Eberlestock Mainframe F1", "Taschen", 1, "v", 1960, 0, "base", "Tragegestell Regular (4 lbs 5 oz)"], ["Eberlestock Basin EMOD", "Taschen", 1, "v", 800, 60, "base", "60 L Packsack für Mainframe F1"], ["Eberlestock Batwings Large", "Taschen", 2, "v", 397, 16.5, "base", "pro Stück (14 oz / ~16,5 L)"], ["Fjällräven Singi 48", "Taschen", 1, "v", 2100, 48, "base", "48 L inkl. Holzrahmen & Regenhülle"], ["Savotta Askare 7 L", "Taschen", 1, "v", 445, 7, "base", "7 L Hüfttasche (500D Cordura)"], ["Savotta Sidepouch 12 L", "Taschen", 2, "v", 320, 12, "base", "pro Stück (12 L)"], ["Gregory Alpaca Gear Box 50 L", "Taschen", 1, "v", 2850, 50, "base", "Wasserdichte Hartbox (~50 L)"], ["Patagonia Black Hole Duffel 65 L", "Taschen", 1, "v", 1440, 65, "base", "65 L (ca. 1440 g)"], ["Yeti Panga 50", "Taschen", 1, "v", 2360, 50, "base", "50 L wasserdichte Duffel (5.2 lbs)"], ["Ortlieb Drybag 5 L", "Taschen", 1, "v", 150, 5, "base", "5 L (PS490/PD350 ca.)"], ["Ortlieb Drybag 79 L", "Taschen", 1, "v", 560, 79, "base", "79 L PD350"], ["Ortlieb Drybag 109 L", "Taschen", 1, "v", 700, 109, "base", "109 L PD350"], ["Gear Pocket", "Taschen", 1, "v", 150, 3, "base", "ca. – noch wiegen"], ["Sidepocket", "Taschen", 3, "v", 140, 4, "base", "pro Stück (z. B. Singi Side Pocket 4 L, ca.)"], ["Gumotex Seawave", "Boot", 1, "v", 17500, 88.0, "base", "17,5 kg (Packmaß 68×43×30 cm im 100 L Sack)"], ["DWO Fly #5 (Rute)", "Angeln", 1, "v", 115, 0.8, "base", "9'0\" #5 inkl. Futteral (ca.)"], ["Shimano Rolle #5", "Angeln", 1, "v", 165, 0.3, "base", "Biocraft XT LA56 inkl. Schnur (ca.)"], ["DWO Rolle #4", "Angeln", 1, "v", 140, 0.3, "base", "Inkl. Schnur (ca.)"], ["Fieberglas Fly #4 (Rute)", "Angeln", 1, "k", 110, 0.7, "base", "Kaputt, seit 2026 nicht mehr da"], ["UL Spinnrute 0-7 g", "Angeln", 1, "v", 95, 0.6, "base", "Barschrute 0–7 g (ca.)"], ["UL Rolle", "Angeln", 1, "v", 185, 0.3, "base", "1000/2000er Größe inkl. Schnur (ca.)"], ["Daiwa Spinnrute 40-70 g", "Angeln", 1, "v", 190, 1.0, "base", "ca. – noch wiegen"], ["Daiwa Ninja 4000", "Angeln", 1, "v", 285, 0.4, "base", "Ninja LT 4000 inkl. Schnur (ca.)"], ["Sony A7C II", "Elektronik", 1, "v", 514, 1.2, "base", "Body inkl. Akku (ohne Objektiv)"], ["Fujifilm X100VI", "Elektronik", 1, "v", 521, 0.8, "base", "Inkl. Akku & SD-Karte"], ["Insta360 Pro Ace 2", "Elektronik", 1, "v", 177, 0.3, "base", "Ace Pro 2 inkl. Akku"], ["DJI Neo 2", "Elektronik", 1, "v", 151, 0.6, "base", "151 g (160 g mit Sendeempfänger)"], ["DJI Mini 4", "Elektronik", 1, "v", 249, 0.8, "base", "Mini 4 Pro (<250 g, ohne Controller)"], ["Anker Powerbank 25000", "Elektronik", 1, "v", 595, 0.5, "base", "Anker 25.000 mAh (ca.)"], ["UGreen Powerbank 25000", "Elektronik", 1, "v", 515, 0.5, "base", "Nexode 25.000 mAh (ca.)"], ["Solarpanel 40 W", "Elektronik", 1, "v", 1300, 1.8, "base", "FlexSolar E40W (ca. 1,3 kg)"], ["Olight Sphere + O-Clip", "Elektronik", 1, "v", 145, 0.3, "base", "Sphere 93 g + O-Clip 52 g"], ["Nitecore Stirnlampe klein", "Elektronik", 1, "v", 45, 0.1, "base", "z. B. NU25 UL (ca.)"], ["Flextail Dusche", "Hygiene & Safety", 1, "v", 200, 0.4, "base", "Tiny Shower (79×78×36 mm)"], ["Flextail Mini Pump", "Hygiene & Safety", 1, "v", 96, 0.2, "base", "Tiny Pump 2X (ca.)"], ["Waschbeutel", "Hygiene & Safety", 1, "v", 280, 1.2, "base", "ca. – gefüllt noch wiegen"], ["First-Aid-Kit", "Hygiene & Safety", 1, "v", 320, 1.0, "base", "ca. – gefüllt noch wiegen"]];
 const DEFAULT_SETS = [{"id": "set_sleep", "name": "Schlafsystem Hybrid", "icon": "bedroll", "items": ["Bushcraft Spain Tarp 3x3", "Bushcraft Spain Bedroll", "Ital. Armee Decke", "Voited Synthetik Decke", "Exped SynMat 9 LW", "Cocoon Kopfkissen"]}, {"id": "set_cook", "name": "Kochen & Wasser", "icon": "stove", "items": ["Solo Stove", "Solo Pot 900", "Nestcup Grayl Pathfinder 700 ml", "Holzlöffel geschnitzt lang", "Gewürztasche", "Grayl Geopress", "Nalgene 1 L"]}, {"id": "set_tools", "name": "Werkzeug-Kit", "icon": "axe", "items": ["Gränsfors Forstaxt (lang)", "Silky Bigboy", "Cäsström Lars Fält", "Mora Kansbol", "Fällkniven DC3", "Feuerstahl", "Leatherman Rebar"]}, {"id": "set_elec", "name": "Kamera & Strom", "icon": "cam", "items": ["Fujifilm X100VI", "DJI Neo 2", "Anker Powerbank 25000", "UGreen Powerbank 25000", "Solarpanel 40 W", "Olight Sphere + O-Clip", "Nitecore Stirnlampe klein"]}];
+const DEFAULT_TOURS = [
+  {id: '26', name: 'Schweden 26', goalKg: 20},
+  {id: '27', name: 'Schweden 27', goalKg: 20}
+];
+const DEFAULT_UNITS = [
+  {id: 'unit_kajak', name: 'Kajak-Setup (Boot)', icon: 'boat', bags: ['Ortlieb Drybag 79 L', 'Gregory Alpaca Gear Box 50 L', 'Savotta Askare 7 L']},
+  {id: 'unit_frame', name: 'Tragegestell-Setup (Land)', icon: 'pack', bags: ['Eberlestock Mainframe F1', 'Eberlestock Basin EMOD', 'Eberlestock Batwings Large', 'Savotta Sidepouch 12 L']}
+];
 
 const ST = {v:'vorhanden', g:'geplant', k:'kaputt', x:'verkauft'};
 const WCAT = {base:'Basisgewicht', worn:'Am Körper', cons:'Verbrauch'};
@@ -333,16 +341,45 @@ const svgIcon = k => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k]||IC
 const itemVisual = it => it.p ? `<img src="${it.p}" alt="">` : svgIcon(iconKey(it));
 
 // State Init
+function migrateDB(db){
+  if(!Array.isArray(db.sets)) db.sets = JSON.parse(JSON.stringify(DEFAULT_SETS));
+  if(!Array.isArray(db.units)) db.units = JSON.parse(JSON.stringify(DEFAULT_UNITS));
+  if(!Array.isArray(db.tours) || !db.tours.length){
+    db.tours = [
+      {id: '26', name: 'Schweden 26', goalKg: 20},
+      {id: '27', name: 'Schweden 27', goalKg: db.goalKg || 20}
+    ];
+  }
+  if(!db.activeTour || !db.tours.some(t=>t.id===db.activeTour)){
+    db.activeTour = db.tours[db.tours.length - 1].id;
+  }
+  db.items.forEach(i=>{
+    if(!Array.isArray(i.tours)){
+      i.tours = [];
+      if(i.a) i.tours.push('26');
+      if(i.b) i.tours.push('27');
+    }
+    if(!i.packed || typeof i.packed !== 'object'){
+      i.packed = {};
+      if(i.pk) i.packed['27'] = true;
+    }
+  });
+  return db;
+}
+
 function makeDefaultState(){
   const items = RAW_ITEMS.map((r,idx)=>({
     id: 'i'+idx,
     name: r[0], c: r[1], n: r[2], s: r[3],
     w: r[4], vol: r[5], wcat: r[6], note: r[7],
-    a: false, b: false, pk: false, t: '', todo: '', p: ''
+    tours: [], packed: {}, a: false, b: false, pk: false, t: '', todo: '', p: ''
   }));
   return {
     items,
     sets: JSON.parse(JSON.stringify(DEFAULT_SETS)),
+    units: JSON.parse(JSON.stringify(DEFAULT_UNITS)),
+    tours: JSON.parse(JSON.stringify(DEFAULT_TOURS)),
+    activeTour: '27',
     goalKg: 20,
     theme: '',
     updatedAt: 0
@@ -355,7 +392,7 @@ function loadState(){
     const raw = localStorage.getItem(STORE_KEY);
     if(raw){
       const parsed = JSON.parse(raw);
-      if(parsed && Array.isArray(parsed.items)) return parsed;
+      if(parsed && Array.isArray(parsed.items)) return migrateDB(parsed);
     }
   }catch(e){}
   return makeDefaultState();
@@ -434,8 +471,7 @@ async function pullCloud(forceAlert, silent){
       const cloudTs = data.updatedAt || 0;
       const localTs = DB.updatedAt || 0;
       if(cloudTs > localTs && (!silent || !pushTimer)){
-        DB = data;
-        if(!Array.isArray(DB.sets)) DB.sets = JSON.parse(JSON.stringify(DEFAULT_SETS));
+        DB = migrateDB(data);
         if(DB.theme) document.documentElement.setAttribute('data-theme', DB.theme);
         saveState(true);
         renderAll();
@@ -501,16 +537,34 @@ if(DB.theme) document.documentElement.setAttribute('data-theme', DB.theme);
 
 // UI State
 let view = 'gear'; // gear | bags | sets
+let bagSubView = 'units'; // units | single
 let anaTab = 'cat'; // cat | w27 | bags | todo
 let cat = '', mode = '', q = '', sort = 'c', qa = '', bf = '', qb = '';
-let focusBag = null, focusSet = null;
-let sheetMode = null; // null | item | newItem | export | setEdit
+let focusBag = null, focusUnit = null, focusSet = null;
+let sheetMode = null;
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s??'').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmtKg = g => (g/1000).toFixed(2).replace('.',',') + ' kg';
 const fmtG = g => g >= 1000 ? (g/1000).toFixed(2).replace('.',',')+' kg' : Math.round(g)+' g';
 const getBags = () => DB.items.filter(i => i.c === 'Taschen' && i.s !== 'x');
+const getActiveTour = () => DB.tours.find(t=>t.id===DB.activeTour) || DB.tours[DB.tours.length-1];
+const shortTour = t => t.name.replace(/^Schweden\s+/i, '');
+const hasTour = (it, tid) => Array.isArray(it.tours) && it.tours.includes(tid);
+const isPacked = (it, tid) => !!(it.packed && it.packed[tid]);
+function setTourFlag(it, tid, val){
+  if(!Array.isArray(it.tours)) it.tours = [];
+  if(val){ if(!it.tours.includes(tid)) it.tours.push(tid); }
+  else { it.tours = it.tours.filter(x=>x!==tid); }
+  it.a = it.tours.includes('26');
+  it.b = it.tours.includes('27');
+}
+function setPackedFlag(it, tid, val){
+  if(!it.packed || typeof it.packed !== 'object') it.packed = {};
+  if(val) it.packed[tid] = true;
+  else delete it.packed[tid];
+  it.pk = !!it.packed['27'];
+}
 
 function ensureQb(){
   const bags = getBags();
@@ -527,31 +581,36 @@ function renderAll(){
 
 function renderStats(){
   const A = DB.items;
+  const at = getActiveTour();
   const totalPcs = A.filter(i=>i.s==='v').reduce((s,i)=>s+i.n,0);
-  const t27 = A.filter(i=>i.b);
-  const t27Pcs = t27.reduce((s,i)=>s+i.n,0);
-  const t27Pk = t27.filter(i=>i.pk).reduce((s,i)=>s+i.n,0);
+  const tAct = A.filter(i=>hasTour(i, at.id));
+  const tActPcs = tAct.reduce((s,i)=>s+i.n,0);
+  const tActPk = tAct.filter(i=>isPacked(i, at.id)).reduce((s,i)=>s+i.n,0);
   const planned = A.filter(i=>i.s==='g').length;
-  const totalG = t27.reduce((s,i)=>s+(i.w||0)*i.n,0);
-  const baseG = t27.filter(i=>(i.wcat||'base')==='base').reduce((s,i)=>s+(i.w||0)*i.n,0);
+  const totalG = tAct.reduce((s,i)=>s+(i.w||0)*i.n,0);
+  const baseG = tAct.filter(i=>(i.wcat||'base')==='base').reduce((s,i)=>s+(i.w||0)*i.n,0);
+  const goal = at.goalKg || 20;
   const kg = totalG/1000;
-  const pct = Math.min(100, (kg / Math.max(1, DB.goalKg||20)) * 100);
+  const pct = Math.min(100, (kg / Math.max(1, goal)) * 100);
 
   $('#st').innerHTML = `
     <div class="card"><b>${totalPcs}</b><span>Stück vorhanden</span></div>
-    <div class="card"><b>${t27Pcs}</b><span>Schweden 27</span>${t27Pcs?`<div class="sub">${t27Pk}/${t27Pcs} gepackt</div>`:''}</div>
+    <div class="card" id="btnTours" style="cursor:pointer" title="Aktive Tour wechseln oder neue Tour anlegen (z. B. Schweden 28)">
+      <b>${tActPcs}</b><span>${esc(at.name)} ▾</span>${tActPcs?`<div class="sub">${tActPk}/${tActPcs} gepackt</div>`:'<div class="sub" style="color:var(--mu)">Tour wählen / +</div>'}
+    </div>
     <div class="card"><b>${planned}</b><span>Geplant</span></div>
-    <button class="gz" id="btnGoal" style="--p:${pct}" title="Zielgewicht anpassen (aktuell ${DB.goalKg} kg)">
-      <u><b>${kg.toFixed(1)}</b><span>kg / ${DB.goalKg} kg</span><small>Basis ${(baseG/1000).toFixed(1)}</small></u>
+    <button class="gz" id="btnGoal" style="--p:${pct}" title="Zielgewicht für ${esc(at.name)} anpassen (aktuell ${goal} kg)">
+      <u><b>${kg.toFixed(1)}</b><span>kg / ${goal} kg</span><small>Basis ${(baseG/1000).toFixed(1)}</small></u>
     </button>
   `;
 }
 
 function renderAnalysis(){
-  const tabs = [['cat','Kategorien'],['w27','Gewicht Tour 27'],['bags','Taschen-Check'],['todo','Wartung']];
+  const at = getActiveTour();
+  const tabs = [['cat','Kategorien'],['w27',`Gewicht ${at.name}`],['bags','Taschen-Check'],['todo','Wartung']];
   const todos = DB.items.filter(i=>i.todo && i.todo.trim());
   $('#atabs').innerHTML = tabs.map(([k,l])=>
-    `<button class="chip${anaTab===k?' on':''}" data-atab="${k}">${l}${k==='todo'&&todos.length?` (${todos.length})`:''}</button>`
+    `<button class="chip${anaTab===k?' on':''}" data-atab="${k}">${esc(l)}${k==='todo'&&todos.length?` (${todos.length})`:''}</button>`
   ).join('');
 
   const body = $('#abody');
@@ -562,23 +621,23 @@ function renderAnalysis(){
       <div class="br"><span>${esc(c)}</span><div class="bar"><i style="width:${v/mx*100}%"></i></div><b>${v} Stk.</b></div>
     `).join('');
   } else if(anaTab === 'w27'){
-    const t27 = DB.items.filter(i=>i.b);
+    const tAct = DB.items.filter(i=>hasTour(i, at.id));
     const byType = {base:0, worn:0, cons:0};
-    let vol27 = 0;
-    t27.forEach(i=>{
+    let volAct = 0;
+    tAct.forEach(i=>{
       const g = (i.w||0)*i.n;
       byType[i.wcat||'base'] = (byType[i.wcat||'base']||0) + g;
-      if(i.c!=='Taschen') vol27 += (i.vol||0)*i.n;
+      if(i.c!=='Taschen') volAct += (i.vol||0)*i.n;
     });
     const tot = Math.max(1, byType.base + byType.worn + byType.cons);
-    const catRows = CATEGORIES.map(([c])=>[c, t27.filter(i=>i.c===c).reduce((s,i)=>s+(i.w||0)*i.n,0)]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);
+    const catRows = CATEGORIES.map(([c])=>[c, tAct.filter(i=>i.c===c).reduce((s,i)=>s+(i.w||0)*i.n,0)]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);
     const mx = Math.max(1, ...catRows.map(x=>x[1]));
     body.innerHTML = `
       <div class="br"><span>Basisgewicht</span><div class="bar"><i class="ok" style="width:${byType.base/tot*100}%"></i></div><b>${fmtKg(byType.base)}</b></div>
       <div class="br"><span>Am Körper</span><div class="bar"><i class="bl" style="width:${byType.worn/tot*100}%"></i></div><b>${fmtKg(byType.worn)}</b></div>
       <div class="br"><span>Verbrauch</span><div class="bar"><i class="pl" style="width:${byType.cons/tot*100}%"></i></div><b>${fmtKg(byType.cons)}</b></div>
-      <p class="mu" style="margin:6px 0 8px">Geschätztes Packvolumen (ohne Taschen): <b>${vol27.toFixed(1).replace('.',',')} L</b></p>
-      ${catRows.length ? catRows.map(([c,g])=>`<div class="br"><span>${esc(c)}</span><div class="bar"><i style="width:${g/mx*100}%"></i></div><b>${fmtG(g)}</b></div>`).join('') : '<p class="mu">Noch keine Teile für Schweden 27 zugewiesen.</p>'}
+      <p class="mu" style="margin:6px 0 8px">Geschätztes Packvolumen (ohne Taschen): <b>${volAct.toFixed(1).replace('.',',')} L</b></p>
+      ${catRows.length ? catRows.map(([c,g])=>`<div class="br"><span>${esc(c)}</span><div class="bar"><i style="width:${g/mx*100}%"></i></div><b>${fmtG(g)}</b></div>`).join('') : `<p class="mu">Noch keine Teile für ${esc(at.name)} zugewiesen.</p>`}
     `;
   } else if(anaTab === 'bags'){
     const bags = getBags();
@@ -587,7 +646,7 @@ function renderAnalysis(){
       const inG = ins.reduce((s,i)=>s+(i.w||0)*i.n,0);
       const inV = ins.reduce((s,i)=>s+(i.vol||0)*i.n,0);
       return {b, totG: (b.w||0)+inG, inV, cnt: ins.reduce((s,i)=>s+i.n,0)};
-    }).filter(x=>x.cnt>0 || x.b.b).sort((a,b)=>b.totG-a.totG);
+    }).filter(x=>x.cnt>0 || hasTour(x.b, at.id)).sort((a,b)=>b.totG-a.totG);
     const mx = Math.max(1, ...rows.map(x=>x.totG));
     body.innerHTML = rows.length ? rows.map(x=>`
       <div class="br">
@@ -608,10 +667,11 @@ function renderAnalysis(){
 
 function renderViewTabs(){
   const bagsCnt = getBags().length;
+  const unitsCnt = DB.units.length;
   const setsCnt = DB.sets.length;
   $('#vtabs').innerHTML = `
     <button class="${view==='gear'?'on':''}" data-view="gear">Ausrüstung <span class="cnt">(${DB.items.length})</span></button>
-    <button class="${view==='bags'?'on':''}" data-view="bags">Taschen <span class="cnt">(${bagsCnt})</span></button>
+    <button class="${view==='bags'?'on':''}" data-view="bags">Taschen &amp; Einheiten <span class="cnt">(${unitsCnt}/${bagsCnt})</span></button>
     <button class="${view==='sets'?'on':''}" data-view="sets">Sets / Kits <span class="cnt">(${setsCnt})</span></button>
   `;
 }
@@ -624,13 +684,15 @@ function renderMain(){
 
 function renderGearView(){
   const bags = getBags();
+  const at = getActiveTour();
   let L = DB.items.slice();
   if(cat) L = L.filter(i=>i.c===cat);
   if(bf) L = L.filter(i=>bf==='-' ? (!i.t && i.c!=='Taschen') : i.t===bf);
-  if(mode==='27') L = L.filter(i=>i.b);
-  if(mode==='26') L = L.filter(i=>i.a);
-  if(mode==='g') L = L.filter(i=>i.s==='g');
-  if(mode==='todo') L = L.filter(i=>i.todo && i.todo.trim());
+  if(mode.startsWith('tour:')){
+    const tid = mode.slice(5);
+    L = L.filter(i=>hasTour(i, tid));
+  } else if(mode==='g') L = L.filter(i=>i.s==='g');
+  else if(mode==='todo') L = L.filter(i=>i.todo && i.todo.trim());
   if(q) L = L.filter(i=>i.name.toLowerCase().includes(q) || (i.note||'').toLowerCase().includes(q) || (i.c||'').toLowerCase().includes(q));
 
   const cmp = {
@@ -649,27 +711,34 @@ function renderGearView(){
   }).join('');
 
   let packHtml = '';
-  if(mode === '27'){
-    const t27 = DB.items.filter(i=>i.b);
-    const tot = t27.reduce((s,i)=>s+i.n,0);
-    const pk = t27.filter(i=>i.pk).reduce((s,i)=>s+i.n,0);
+  const packTid = mode.startsWith('tour:') ? mode.slice(5) : at.id;
+  if(mode.startsWith('tour:')){
+    const tList = DB.items.filter(i=>hasTour(i, packTid));
+    const tot = tList.reduce((s,i)=>s+i.n,0);
+    const pk = tList.filter(i=>isPacked(i, packTid)).reduce((s,i)=>s+i.n,0);
     const p = tot ? Math.round(pk/tot*100) : 0;
     packHtml = `<div class="packbar">
       <b>Pack-Fortschritt: ${pk}/${tot} (${p}%)</b>
       <div class="prail"><i style="width:${p}%"></i></div>
-      <button class="btn sm" data-packall="1">Alle abhaken</button>
-      <button class="btn sm" data-packall="0">Zurücksetzen</button>
+      <button class="btn sm" data-packall="1" data-ptid="${esc(packTid)}">Alle abhaken</button>
+      <button class="btn sm" data-packall="0" data-ptid="${esc(packTid)}">Zurücksetzen</button>
     </div>`;
   }
 
   let qaBanner = '';
   if(qa){
-    const labels = {b:'Schweden 27 zuweisen', a:'Schweden 26 zuweisen', pk:'Gepackt ✓ abhaken', t:`In Tasche packen: ${qb}`};
+    const labels = {
+      tour: `${at.name} zuweisen`,
+      pk: `Gepackt ✓ (${at.name}) abhaken`,
+      t: `In Tasche packen: ${qb}`
+    };
     qaBanner = `<div class="banner">
-      <span>⚡ Schnell-Modus aktiv: ${esc(labels[qa])} – Kacheln einfach antippen</span>
+      <span>⚡ Schnell-Modus aktiv: ${esc(labels[qa]||'')} – Kacheln einfach antippen</span>
       <button class="btn sm" data-qa="" style="background:var(--bg);color:var(--ink)">Beenden</button>
     </div>`;
   }
+
+  const tourChips = DB.tours.map(t=>chip('m', 'tour:'+t.id, esc(t.name), mode==='tour:'+t.id)).join('');
 
   $('#main').innerHTML = `
     <div class="ctl">
@@ -685,10 +754,14 @@ function renderGearView(){
       </div>
       <div class="chips">${chip('c','','Alle',!cat)}${CATEGORIES.map(([c])=>chip('c',c,esc(c),cat===c)).join('')}</div>
       <div class="chips">
-        ${[['Alle',''],['Schweden 27','27'],['Schweden 26','26'],['Geplant','g'],['Wartung 🔧','todo']].map(([l,v])=>chip('m',v,l,mode===v)).join('')}
+        ${chip('m','','Alle',mode==='')}
+        ${tourChips}
+        <button class="chip" id="btnAddTourChip" title="Neue Tour anlegen (z. B. Schweden 28)">+ Tour</button>
+        ${chip('m','g','Geplant',mode==='g')}
+        ${chip('m','todo','Wartung 🔧',mode==='todo')}
       </div>
       <div class="chips">
-        ${[['Antippen: Details',''],['⚡ 27 zuweisen','b'],['⚡ Gepackt ✓','pk'],['⚡ 26 zuweisen','a'],['⚡ In Tasche','t']].map(([l,v])=>chip('qa',v,l,qa===v)).join('')}
+        ${[['Antippen: Details',''],['⚡ '+esc(at.name)+' zuweisen','tour'],['⚡ Gepackt ✓ ('+esc(shortTour(at))+')','pk'],['⚡ In Tasche','t']].map(([l,v])=>chip('qa',v,l,qa===v)).join('')}
       </div>
       <div class="sr">
         <select id="tb" style="flex:1"><option value="">Alle Taschen</option><option value="-"${bf==='-'?' selected':''}>Ohne Tasche</option>${bagOpts(bf)}</select>
@@ -698,11 +771,13 @@ function renderGearView(){
       ${qaBanner}
     </div>
     <main class="grid">
-      ${L.length ? L.map(i=>`
-        <button class="t${i.s==='x'?' dim':''}${i.pk?' packed':''}" data-item="${i.id}">
+      ${L.length ? L.map(i=>{
+        const pkNow = isPacked(i, packTid);
+        return `
+        <button class="t${i.s==='x'?' dim':''}${pkNow?' packed':''}" data-item="${i.id}">
           <div class="ic">
             ${itemVisual(i)}
-            ${i.pk?'<span class="badge-tl">✓</span>':''}
+            ${pkNow?'<span class="badge-tl">✓</span>':''}
             ${i.todo?'<span class="badge-tr" title="'+esc(i.todo)+'">🔧</span>':''}
           </div>
           <div class="nm">${esc(i.name)}</div>
@@ -711,18 +786,33 @@ function renderGearView(){
             ${i.w?`<em class="wt">${fmtG(i.w*i.n)}</em>`:''}
             ${i.vol?`<em>${i.c==='Taschen'?i.vol+' L':(i.vol*i.n).toFixed(1).replace('.0','')+' L'}</em>`:''}
             ${i.s!=='v'?`<em class="s${i.s}">${ST[i.s]}</em>`:''}
-            ${i.a?'<em class="k">26</em>':''}
-            ${i.b?'<em class="k">27</em>':''}
+            ${(i.tours||[]).map(tid=>{ const to=DB.tours.find(x=>x.id===tid); return to?`<em class="k">${esc(shortTour(to))}</em>`:''; }).join('')}
             ${i.t?`<em class="bg">🎒 ${esc(i.t.split(' ').slice(0,2).join(' '))}</em>`:''}
           </div>
         </button>
-      `).join('') : '<p class="mu" style="padding:14px">Nichts gefunden.</p>'}
+      `;}).join('') : '<p class="mu" style="padding:14px">Nichts gefunden.</p>'}
     </main>
   `;
 }
 
+function calcUnitStats(u){
+  const bagObjs = (u.bags||[]).map(nm=>DB.items.find(i=>i.name===nm && i.c==='Taschen')).filter(Boolean);
+  let ownG = 0, capV = 0, inG = 0, inV = 0, itemCnt = 0;
+  bagObjs.forEach(b=>{
+    ownG += (b.w||0)*(b.n||1);
+    capV += (b.vol||0)*(b.n||1);
+    const ins = DB.items.filter(i=>i.t===b.name);
+    inG += ins.reduce((s,i)=>s+(i.w||0)*i.n,0);
+    inV += ins.reduce((s,i)=>s+(i.vol||0)*i.n,0);
+    itemCnt += ins.reduce((s,i)=>s+i.n,0);
+  });
+  return {bagObjs, ownG, capV, inG, inV, totG: ownG+inG, itemCnt};
+}
+
 function renderBagsView(){
   const bags = getBags();
+  const at = getActiveTour();
+
   if(focusBag){
     const isUnassigned = focusBag === '-';
     const bagObj = isUnassigned ? null : bags.find(b=>b.name===focusBag);
@@ -737,7 +827,7 @@ function renderBagsView(){
       <div class="focus">
         <div class="focus-hd">
           <div>
-            <button class="btn sm" data-bagfocus="">← Alle Taschen</button>
+            <button class="btn sm" data-bagfocus="">← Zurück</button>
             <h2 style="margin-top:8px">${isUnassigned ? 'Ohne Tasche' : esc(bagObj.name)}</h2>
             <p class="mu">
               ${isUnassigned ? `${items.reduce((s,i)=>s+i.n,0)} Stück · ${fmtKg(inG)}` : `Eigengewicht ${fmtG(ownG)} + Inhalt ${fmtG(inG)} = <b>${fmtKg(totG)}</b>${cap ? ` · Volumen ${inV.toFixed(1).replace('.',',')} / ${cap} L` : ''}`}
@@ -757,7 +847,7 @@ function renderBagsView(){
                 ${i.n>1?`<em>×${i.n}</em>`:''}
                 ${i.w?`<em>${fmtG(i.w*i.n)}</em>`:''}
                 ${i.vol?`<em>${(i.vol*i.n).toFixed(1).replace('.0','')} L</em>`:''}
-                ${i.b?'<em class="k">27</em>':''}
+                ${(i.tours||[]).map(tid=>{ const to=DB.tours.find(x=>x.id===tid); return to?`<em class="k">${esc(shortTour(to))}</em>`:''; }).join('')}
               </div>
               ${!isUnassigned ? `<button class="btn sm err" data-unpack="${i.id}" title="Aus Tasche nehmen">×</button>` : ''}
             </div>
@@ -768,6 +858,88 @@ function renderBagsView(){
     return;
   }
 
+  if(focusUnit){
+    const u = DB.units.find(x=>x.id===focusUnit);
+    if(!u){ focusUnit=null; renderBagsView(); return; }
+    const st = calcUnitStats(u);
+    $('#main').innerHTML = `
+      <div class="focus">
+        <div class="focus-hd">
+          <div>
+            <button class="btn sm" data-unitfocus="">← Alle Funktionseinheiten</button>
+            <h2 style="margin-top:8px">${esc(u.name)}</h2>
+            <p class="mu">${st.bagObjs.length} Taschen · ${st.itemCnt} Teile · <b>${fmtKg(st.totG)}</b> Gesamtgewicht${st.capV?` · ${st.inV.toFixed(1).replace('.',',')} / ${st.capV} L`:''}</p>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <button class="btn on" data-unit2tour="${u.id}">+ Komplett auf ${esc(at.name)}</button>
+            <button class="btn" data-editunit="${u.id}">Einheit bearbeiten</button>
+          </div>
+        </div>
+        ${st.capV ? `<div class="volbar"><i class="${st.inV>st.capV?'over':''}" style="width:${Math.min(100,st.inV/st.capV*100)}%"></i></div>` : ''}
+        <div class="focus-list">
+          ${st.bagObjs.length ? st.bagObjs.map(b=>{
+            const ins = DB.items.filter(i=>i.t===b.name);
+            const bInG = ins.reduce((s,i)=>s+(i.w||0)*i.n,0);
+            const bInV = ins.reduce((s,i)=>s+(i.vol||0)*i.n,0);
+            const bOwn = (b.w||0)*(b.n||1);
+            const bCap = (b.vol||0)*(b.n||1);
+            return `
+              <div class="frow">
+                <div class="frow-l" data-bagfocus="${esc(b.name)}">
+                  <b>🎒 ${esc(b.name)}${b.n>1?` (×${b.n})`:''}</b>
+                  <em>${ins.reduce((s,i)=>s+i.n,0)} Teile</em>
+                  <em class="wt">${fmtKg(bOwn+bInG)}</em>
+                  ${bCap?`<em>${bInV.toFixed(0)}/${bCap} L</em>`:''}
+                </div>
+                <button class="btn sm err" data-rmbagfromunit="${u.id}::${esc(b.name)}" title="Aus Einheit entfernen">×</button>
+              </div>
+            `;
+          }).join('') : '<p class="mu">Noch keine Taschen in dieser Funktionseinheit.</p>'}
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  const headerBar = `
+    <div style="padding:8px 14px 2px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
+      <div class="seg" style="margin:0">
+        <button class="${bagSubView==='units'?'on':''}" data-bagsub="units">Funktionseinheiten (${DB.units.length})</button>
+        <button class="${bagSubView==='single'?'on':''}" data-bagsub="single">Einzelne Taschen (${bags.length})</button>
+      </div>
+      ${bagSubView==='units' ? '<button class="btn on" id="btnNewUnit">+ Neue Einheit</button>' : ''}
+    </div>
+  `;
+
+  if(bagSubView === 'units'){
+    const uCards = DB.units.map(u=>{
+      const st = calcUnitStats(u);
+      return `
+        <button class="bag-card" data-unitfocus="${u.id}">
+          <div class="bag-top">
+            <div class="bag-ico">${svgIcon(u.icon||'pack')}</div>
+            <div>
+              <div class="bag-title">${esc(u.name)}</div>
+              <div class="bag-stats">
+                <span>${st.bagObjs.length} Taschen · ${st.itemCnt} Teile</span>
+                <span><b>${fmtKg(st.totG)}</b> ges.</span>
+              </div>
+            </div>
+          </div>
+          ${st.capV ? `
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--mu)">
+              <span>Gesamtvolumen</span><span>${st.inV.toFixed(1).replace('.',',')} / ${st.capV} L</span>
+            </div>
+            <div class="volbar"><i class="${st.inV>st.capV?'over':''}" style="width:${Math.min(100,st.inV/st.capV*100)}%"></i></div>
+          ` : ''}
+          <div class="mu">${st.bagObjs.map(b=>b.name.split(' ').slice(0,2).join(' ')).join(' + ') || 'Leer'}</div>
+        </button>
+      `;
+    }).join('');
+    $('#main').innerHTML = `${headerBar}<div class="cards2">${uCards}</div>`;
+    return;
+  }
+
   const unassigned = DB.items.filter(i=>!i.t && i.c!=='Taschen');
   const unG = unassigned.reduce((s,i)=>s+(i.w||0)*i.n,0);
   const cards = bags.map(b=>{
@@ -775,7 +947,7 @@ function renderBagsView(){
     const inG = ins.reduce((s,i)=>s+(i.w||0)*i.n,0);
     const inV = ins.reduce((s,i)=>s+(i.vol||0)*i.n,0);
     const cnt = ins.reduce((s,i)=>s+i.n,0);
-    const t27 = ins.filter(i=>i.b).length;
+    const tAct = ins.filter(i=>hasTour(i, at.id)).length;
     const cap = b.vol || 0;
     return `
       <button class="bag-card" data-bagfocus="${esc(b.name)}">
@@ -786,7 +958,7 @@ function renderBagsView(){
             <div class="bag-stats">
               <span>${cnt} Teile</span>
               <span><b>${fmtKg((b.w||0)+inG)}</b> ges.</span>
-              ${t27?`<span style="color:var(--bl)">${t27}× Tour 27</span>`:''}
+              ${tAct?`<span style="color:var(--bl)">${tAct}× ${esc(shortTour(at))}</span>`:''}
             </div>
           </div>
         </div>
@@ -801,6 +973,7 @@ function renderBagsView(){
   }).join('');
 
   $('#main').innerHTML = `
+    ${headerBar}
     <div class="cards2">
       ${cards}
       <button class="bag-card" data-bagfocus="-">
@@ -818,6 +991,7 @@ function renderBagsView(){
 }
 
 function renderSetsView(){
+  const at = getActiveTour();
   if(focusSet){
     const s = DB.sets.find(x=>x.id===focusSet);
     if(!s){ focusSet=null; renderSetsView(); return; }
@@ -835,8 +1009,8 @@ function renderSetsView(){
             <p class="mu">${items.length} Gegenstände · <b>${fmtKg(totG)}</b> · ${totV.toFixed(1).replace('.',',')} L</p>
           </div>
           <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <button class="btn on" data-set27="${s.id}">+ Alle auf Tour 27</button>
-            <button class="btn ok" data-setpk="${s.id}">Alle gepackt ✓</button>
+            <button class="btn on" data-set27="${s.id}">+ Alle auf ${esc(at.name)}</button>
+            <button class="btn ok" data-setpk="${s.id}">Alle gepackt ✓ (${esc(shortTour(at))})</button>
             <button class="btn" data-editset="${s.id}">Set bearbeiten</button>
           </div>
         </div>
@@ -851,8 +1025,8 @@ function renderSetsView(){
                 <b>${esc(i.name)}</b>
                 ${i.n>1?`<em>×${i.n}</em>`:''}
                 ${i.w?`<em>${fmtG(i.w*i.n)}</em>`:''}
-                ${i.b?'<em class="k">27</em>':''}
-                ${i.pk?'<em class="bg">✓</em>':''}
+                ${(i.tours||[]).map(tid=>{ const to=DB.tours.find(x=>x.id===tid); return to?`<em class="k">${esc(shortTour(to))}</em>`:''; }).join('')}
+                ${isPacked(i, at.id)?'<em class="bg">✓</em>':''}
               </div>
               <button class="btn sm err" data-rmfromset="${s.id}::${esc(i.name)}">×</button>
             </div>
@@ -872,7 +1046,7 @@ function renderSetsView(){
         const items = s.items.map(nm=>DB.items.find(i=>i.name===nm)).filter(Boolean);
         const totG = items.reduce((sum,i)=>sum+(i.w||0)*i.n,0);
         const totV = items.reduce((sum,i)=>sum+(i.vol||0)*i.n,0);
-        const in27 = items.filter(i=>i.b).length;
+        const inAct = items.filter(i=>hasTour(i, at.id)).length;
         return `
           <button class="set-card" data-setfocus="${s.id}">
             <div class="bag-top">
@@ -886,7 +1060,7 @@ function renderSetsView(){
                 </div>
               </div>
             </div>
-            <div class="mu">${in27}/${items.length} auf Tour 27 aktiv</div>
+            <div class="mu">${inAct}/${items.length} auf ${esc(at.name)} aktiv</div>
           </button>
         `;
       }).join('')}
@@ -903,16 +1077,18 @@ function closeSheet(){
 
 function openItemSheet(itemId){
   const isNew = !itemId;
+  const initTours = mode.startsWith('tour:') ? [mode.slice(5)] : [];
   const it = isNew
-    ? {id:'', name:'', c:cat||CATEGORIES[0][0], n:1, s:'v', w:0, vol:0, wcat:'base', note:'', a:false, b:mode==='27', pk:false, t:'', todo:'', p:''}
+    ? {id:'', name:'', c:cat||CATEGORIES[0][0], n:1, s:'v', w:0, vol:0, wcat:'base', note:'', tours:initTours, packed:{}, a:false, b:initTours.includes('27'), pk:false, t:'', todo:'', p:''}
     : DB.items.find(i=>i.id===itemId);
   if(!it) return;
-  sheetMode = {type:'item', id: it.id, isNew, draft: {...it}};
+  sheetMode = {type:'item', id: it.id, isNew, draft: JSON.parse(JSON.stringify(it))};
   drawItemSheet();
 }
 
 function drawItemSheet(){
   const d = sheetMode.draft;
+  const at = getActiveTour();
   const bags = getBags();
   $('#sh').hidden = false;
   $('#sh').innerHTML = `
@@ -946,9 +1122,8 @@ function drawItemSheet(){
 
       <div class="seg">${Object.entries(ST).map(([k,v])=>`<button class="${d.s===k?'on':''}" data-ds="${k}">${v}</button>`).join('')}</div>
       <div class="seg">
-        <button class="${d.a?'on':''}" data-dt="a">Schweden 26</button>
-        <button class="${d.b?'on':''}" data-dt="b">Schweden 27</button>
-        <button class="${d.pk?'on':''}" data-dt="pk">Gepackt ✓</button>
+        ${DB.tours.map(t=>`<button class="${hasTour(d,t.id)?'on':''}" data-dtour="${esc(t.id)}">${esc(t.name)}</button>`).join('')}
+        <button class="${isPacked(d,at.id)?'on':''}" data-dpk="${esc(at.id)}">Gepackt ✓ (${esc(shortTour(at))})</button>
       </div>
 
       ${d.c==='Taschen' ? '' : `
@@ -1011,6 +1186,87 @@ function drawSetSheet(){
   `;
 }
 
+function openUnitSheet(unitId){
+  const isNew = !unitId;
+  const u = isNew ? {id:'unit_'+Date.now(), name:'', icon:'pack', bags:[]} : DB.units.find(x=>x.id===unitId);
+  if(!u) return;
+  sheetMode = {type:'unit', isNew, draft: JSON.parse(JSON.stringify(u))};
+  drawUnitSheet();
+}
+
+function drawUnitSheet(){
+  const d = sheetMode.draft;
+  const bags = getBags();
+  const iconChoices = ['boat','pack','box','drybag','camp'];
+  $('#sh').hidden = false;
+  $('#sh').innerHTML = `
+    <div class="bd" data-x></div>
+    <div class="pn">
+      <h2>${sheetMode.isNew ? 'Neue Funktionseinheit' : 'Funktionseinheit bearbeiten'}</h2>
+      <p class="mu">Kombiniere mehrere Taschen zu einem Transport-System (z. B. Kajak-Setup oder Tragegestell).</p>
+      <div class="field"><label>Name der Funktionseinheit</label><input type="text" id="u_name" value="${esc(d.name)}" placeholder="z. B. Kajak-Setup Vanån"></div>
+      <div class="field"><label>Icon</label>
+        <div class="seg">${iconChoices.map(k=>`<button class="${d.icon===k?'on':''}" data-uico="${k}" style="padding:6px 9px">${svgIcon(k).replace('viewBox','width="18" height="18" viewBox')}</button>`).join('')}</div>
+      </div>
+      <div class="field"><label>Enthaltene Taschen (${d.bags.length} gewählt)</label>
+        <div class="checklist" style="margin-top:6px">
+          ${bags.map(b=>{
+            const on = d.bags.includes(b.name);
+            const ins = DB.items.filter(i=>i.t===b.name);
+            const tot = (b.w||0)*(b.n||1) + ins.reduce((s,i)=>s+(i.w||0)*i.n,0);
+            return `<label class="chk-item"><input type="checkbox" data-unitchk="${esc(b.name)}"${on?' checked':''}> <span>${esc(b.name)}</span> <span class="mu" style="margin-left:auto">${fmtKg(tot)}</span></label>`;
+          }).join('')}
+        </div>
+      </div>
+      <div class="row">
+        ${!sheetMode.isNew ? '<button class="btn err" data-delunit="1">Einheit löschen</button>' : '<span></span>'}
+        <button class="btn on" data-saveunit="1">Einheit speichern</button>
+      </div>
+    </div>
+  `;
+}
+
+function openToursSheet(){
+  sheetMode = {type:'tours'};
+  $('#sh').hidden = false;
+  $('#sh').innerHTML = `
+    <div class="bd" data-x></div>
+    <div class="pn">
+      <h2>Touren verwalten</h2>
+      <p class="mu">Wähle deine aktive Tour für Gewichtsanzeige, Packliste &amp; Schnell-Modus oder lege eine neue Tour an (z. B. Schweden 28).</p>
+      <div class="focus-list" style="margin-bottom:12px">
+        ${DB.tours.map(t=>{
+          const act = t.id === DB.activeTour;
+          const cnt = DB.items.filter(i=>hasTour(i,t.id)).reduce((s,i)=>s+i.n,0);
+          return `
+            <div class="frow">
+              <div class="frow-l" data-setactivetour="${esc(t.id)}">
+                <b>${act?'● ':''}${esc(t.name)}</b>
+                <em>${cnt} Stk.</em>
+                <em>Ziel ${t.goalKg||20} kg</em>
+              </div>
+              <div style="display:flex;gap:4px">
+                <button class="btn sm" data-clonetour="${esc(t.id)}" title="Packliste in neue Tour kopieren">Kopieren</button>
+                ${DB.tours.length>1 ? `<button class="btn sm err" data-deltour="${esc(t.id)}" title="Tour löschen">×</button>` : ''}
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+      <div class="field"><label>Neue Tour anlegen</label>
+        <div style="display:flex;gap:8px">
+          <input type="text" id="new_tour_name" placeholder="z. B. Schweden 28" style="flex:1">
+          <button class="btn on" id="doAddTour">+ Anlegen</button>
+        </div>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <span></span>
+        <button class="btn" data-x>Schließen</button>
+      </div>
+    </div>
+  `;
+}
+
 function openExportSheet(){
   sheetMode = {type:'export'};
   $('#sh').hidden = false;
@@ -1032,23 +1288,38 @@ function openExportSheet(){
 }
 
 function buildPrintView(){
-  const t27 = DB.items.filter(i=>i.b);
-  const totG = t27.reduce((s,i)=>s+(i.w||0)*i.n,0);
-  const baseG = t27.filter(i=>(i.wcat||'base')==='base').reduce((s,i)=>s+(i.w||0)*i.n,0);
-  const byCat = CATEGORIES.map(([c])=>[c, t27.filter(i=>i.c===c)]).filter(x=>x[1].length);
+  const at = getActiveTour();
+  const tAct = DB.items.filter(i=>hasTour(i, at.id));
+  const totG = tAct.reduce((s,i)=>s+(i.w||0)*i.n,0);
+  const baseG = tAct.filter(i=>(i.wcat||'base')==='base').reduce((s,i)=>s+(i.w||0)*i.n,0);
+  const byCat = CATEGORIES.map(([c])=>[c, tAct.filter(i=>i.c===c)]).filter(x=>x[1].length);
   $('#printArea').innerHTML = `
-    <h1>Bushcraft-Packliste – Schweden 27</h1>
-    <p><b>Teile:</b> ${t27.reduce((s,i)=>s+i.n,0)} Stk. · <b>Gesamtgewicht:</b> ${fmtKg(totG)} · <b>Basisgewicht:</b> ${fmtKg(baseG)}</p>
+    <h1>Bushcraft-Packliste – ${esc(at.name)}</h1>
+    <p><b>Teile:</b> ${tAct.reduce((s,i)=>s+i.n,0)} Stk. · <b>Gesamtgewicht:</b> ${fmtKg(totG)} · <b>Basisgewicht:</b> ${fmtKg(baseG)}</p>
     ${byCat.map(([c,arr])=>`
       <h3>${esc(c)} (${fmtKg(arr.reduce((s,i)=>s+(i.w||0)*i.n,0))})</h3>
       <table>
         <thead><tr><th style="width:24px">✓</th><th>Gegenstand</th><th>Anz.</th><th>Gewicht</th><th>Tasche</th><th>Hinweis</th></tr></thead>
         <tbody>
-          ${arr.map(i=>`<tr><td>${i.pk?'☑':'☐'}</td><td>${esc(i.name)}</td><td>${i.n}</td><td>${i.w?fmtG(i.w*i.n):'–'}</td><td>${esc(i.t||'–')}</td><td>${esc(i.todo||i.note||'')}</td></tr>`).join('')}
+          ${arr.map(i=>`<tr><td>${isPacked(i,at.id)?'☑':'☐'}</td><td>${esc(i.name)}</td><td>${i.n}</td><td>${i.w?fmtG(i.w*i.n):'–'}</td><td>${esc(i.t||'–')}</td><td>${esc(i.todo||i.note||'')}</td></tr>`).join('')}
         </tbody>
       </table>
     `).join('')}
   `;
+}
+
+function addNewTour(rawName, cloneFromId){
+  const name = (rawName||'').trim();
+  if(!name){ alert('Bitte einen Tour-Namen eingeben (z. B. Schweden 28).'); return false; }
+  const id = 't_' + Date.now();
+  const baseGoal = cloneFromId ? (DB.tours.find(t=>t.id===cloneFromId)?.goalKg || 20) : 20;
+  DB.tours.push({id, name, goalKg: baseGoal});
+  DB.activeTour = id;
+  if(cloneFromId){
+    DB.items.forEach(i=>{ if(hasTour(i, cloneFromId)) setTourFlag(i, id, true); });
+  }
+  saveState();
+  return true;
 }
 
 // --- EVENTS ---
@@ -1056,6 +1327,13 @@ document.addEventListener('click', e=>{
   if(e.target.closest('#btnNew')){ openItemSheet(null); return; }
   if(e.target.closest('#btnExp')){ openExportSheet(); return; }
   if(e.target.closest('#btnSync')){ openSyncSheet(); return; }
+  if(e.target.closest('#btnTours') || e.target.closest('#btnAddTourChip')){ openToursSheet(); return; }
+  if(e.target.closest('#doAddTour')){
+    const val = $('#new_tour_name')?.value || '';
+    if(addNewTour(val, null)){ closeSheet(); renderAll(); }
+    return;
+  }
+  if(e.target.closest('#btnNewUnit')){ openUnitSheet(null); return; }
   if(e.target.closest('#doSyncSave')){
     const u = ($('#sy_url')?.value||'').trim();
     const c = ($('#sy_code')?.value||'').trim();
@@ -1083,21 +1361,23 @@ document.addEventListener('click', e=>{
     saveState(); return;
   }
   if(e.target.closest('#btnGoal')){
-    const v = prompt('Zielgewicht für Schweden 27 in kg:', DB.goalKg);
-    if(v!==null && !isNaN(parseFloat(v)) && parseFloat(v)>0){ DB.goalKg = parseFloat(v); saveState(); renderStats(); }
+    const at = getActiveTour();
+    const v = prompt(`Zielgewicht für ${at.name} in kg:`, at.goalKg || 20);
+    if(v!==null && !isNaN(parseFloat(v)) && parseFloat(v)>0){ at.goalKg = parseFloat(v); DB.goalKg = at.goalKg; saveState(); renderStats(); }
     return;
   }
   if(e.target.closest('#doPrint')){ buildPrintView(); closeSheet(); setTimeout(()=>window.print(), 100); return; }
   if(e.target.closest('#doCopy27')){
-    const t27 = DB.items.filter(i=>i.b);
-    const lines = ['BUSHCRAFT PACKLISTE – SCHWEDEN 27', '================================'];
+    const at = getActiveTour();
+    const tAct = DB.items.filter(i=>hasTour(i, at.id));
+    const lines = [`BUSHCRAFT PACKLISTE – ${at.name.toUpperCase()}`, '================================'];
     CATEGORIES.forEach(([c])=>{
-      const arr = t27.filter(i=>i.c===c);
+      const arr = tAct.filter(i=>i.c===c);
       if(!arr.length) return;
       lines.push('\n['+c+']');
-      arr.forEach(i=>lines.push(`${i.pk?'[x]':'[ ]'} ${i.n>1?i.n+'× ':''}${i.name}${i.w?' ('+fmtG(i.w*i.n)+')':''}${i.t?' -> '+i.t:''}`));
+      arr.forEach(i=>lines.push(`${isPacked(i,at.id)?'[x]':'[ ]'} ${i.n>1?i.n+'× ':''}${i.name}${i.w?' ('+fmtG(i.w*i.n)+')':''}${i.t?' -> '+i.t:''}`));
     });
-    const totG = t27.reduce((s,i)=>s+(i.w||0)*i.n,0);
+    const totG = tAct.reduce((s,i)=>s+(i.w||0)*i.n,0);
     lines.push('\nGesamtgewicht: ' + fmtKg(totG));
     navigator.clipboard.writeText(lines.join('\n')).then(()=>alert('Packliste in Zwischenablage kopiert!'));
     return;
@@ -1117,34 +1397,63 @@ document.addEventListener('click', e=>{
     return;
   }
 
-  const el = e.target.closest('[data-x],[data-view],[data-atab],[data-c],[data-m],[data-qa],[data-item],[data-packall],[data-bagfocus],[data-packinto],[data-edititem],[data-unpack],[data-setfocus],[data-set27],[data-setpk],[data-editset],[data-setbag],[data-rmfromset],[data-cleartodo],[data-dn],[data-ds],[data-dt],[data-rmphoto],[data-delitem],[data-saveitem],[data-sico],[data-delset],[data-saveset]');
+  const el = e.target.closest('[data-x],[data-view],[data-atab],[data-c],[data-m],[data-qa],[data-item],[data-packall],[data-bagsub],[data-bagfocus],[data-unitfocus],[data-unit2tour],[data-editunit],[data-rmbagfromunit],[data-packinto],[data-edititem],[data-unpack],[data-setfocus],[data-set27],[data-setpk],[data-editset],[data-setbag],[data-rmfromset],[data-cleartodo],[data-dn],[data-ds],[data-dtour],[data-dpk],[data-rmphoto],[data-delitem],[data-saveitem],[data-sico],[data-delset],[data-saveset],[data-uico],[data-delunit],[data-saveunit],[data-setactivetour],[data-clonetour],[data-deltour]');
   if(!el) return;
   const d = el.dataset;
 
   if('x' in d){ closeSheet(); return; }
-  if('view' in d){ view = d.view; focusBag = null; focusSet = null; renderViewTabs(); renderMain(); return; }
+  if('view' in d){ view = d.view; focusBag = null; focusUnit = null; focusSet = null; renderViewTabs(); renderMain(); return; }
   if('atab' in d){ anaTab = d.atab; renderAnalysis(); return; }
   if('c' in d){ cat = d.c===cat ? '' : d.c; renderGearView(); return; }
-  if('m' in d){ mode = d.m; renderGearView(); return; }
+  if('m' in d){
+    mode = d.m;
+    if(mode.startsWith('tour:')) DB.activeTour = mode.slice(5);
+    renderAll(); return;
+  }
   if('qa' in d){ qa = d.qa; renderGearView(); return; }
   if('packall' in d){
     const val = d.packall === '1';
-    DB.items.forEach(i=>{ if(i.b) i.pk = val; });
+    const tid = d.ptid || getActiveTour().id;
+    DB.items.forEach(i=>{ if(hasTour(i, tid)) setPackedFlag(i, tid, val); });
     saveState(); renderAll(); return;
   }
   if('item' in d){
     const it = DB.items.find(i=>i.id===d.item);
     if(!it) return;
     if(qa){
+      const at = getActiveTour();
       if(qa === 't'){ if(it.c !== 'Taschen') it.t = it.t===qb ? '' : qb; }
-      else { it[qa] = !it[qa]; }
+      else if(qa === 'tour'){ setTourFlag(it, at.id, !hasTour(it, at.id)); }
+      else if(qa === 'pk'){ setPackedFlag(it, at.id, !isPacked(it, at.id)); }
       saveState(); renderAll();
     } else {
       openItemSheet(it.id);
     }
     return;
   }
+  if('bagsub' in d){ bagSubView = d.bagsub; focusBag = null; focusUnit = null; renderBagsView(); return; }
   if('bagfocus' in d){ focusBag = d.bagfocus || null; renderBagsView(); return; }
+  if('unitfocus' in d){ focusUnit = d.unitfocus || null; renderBagsView(); return; }
+  if('unit2tour' in d){
+    const at = getActiveTour();
+    const u = DB.units.find(x=>x.id===d.unit2tour);
+    if(u){
+      (u.bags||[]).forEach(bnm=>{
+        const bagObj = DB.items.find(i=>i.name===bnm);
+        if(bagObj) setTourFlag(bagObj, at.id, true);
+        DB.items.filter(i=>i.t===bnm).forEach(it=>setTourFlag(it, at.id, true));
+      });
+      saveState(); renderAll();
+    }
+    return;
+  }
+  if('editunit' in d){ openUnitSheet(d.editunit); return; }
+  if('rmbagfromunit' in d){
+    const [uid, bnm] = d.rmbagfromunit.split('::');
+    const u = DB.units.find(x=>x.id===uid);
+    if(u){ u.bags = u.bags.filter(x=>x!==bnm); saveState(); renderBagsView(); }
+    return;
+  }
   if('packinto' in d){ view = 'gear'; qa = 't'; qb = d.packinto; focusBag = null; renderViewTabs(); renderMain(); return; }
   if('edititem' in d){ openItemSheet(d.edititem); return; }
   if('unpack' in d){
@@ -1154,13 +1463,15 @@ document.addEventListener('click', e=>{
   }
   if('setfocus' in d){ focusSet = d.setfocus || null; renderSetsView(); return; }
   if('set27' in d){
+    const at = getActiveTour();
     const s = DB.sets.find(x=>x.id===d.set27);
-    if(s){ s.items.forEach(nm=>{ const it=DB.items.find(i=>i.name===nm); if(it) it.b=true; }); saveState(); renderAll(); }
+    if(s){ s.items.forEach(nm=>{ const it=DB.items.find(i=>i.name===nm); if(it) setTourFlag(it, at.id, true); }); saveState(); renderAll(); }
     return;
   }
   if('setpk' in d){
+    const at = getActiveTour();
     const s = DB.sets.find(x=>x.id===d.setpk);
-    if(s){ s.items.forEach(nm=>{ const it=DB.items.find(i=>i.name===nm); if(it){ it.b=true; it.pk=true; } }); saveState(); renderAll(); }
+    if(s){ s.items.forEach(nm=>{ const it=DB.items.find(i=>i.name===nm); if(it){ setTourFlag(it, at.id, true); setPackedFlag(it, at.id, true); } }); saveState(); renderAll(); }
     return;
   }
   if('setbag' in d){
@@ -1185,12 +1496,37 @@ document.addEventListener('click', e=>{
     return;
   }
 
+  // Tours Sheet actions
+  if('setactivetour' in d){
+    DB.activeTour = d.setactivetour;
+    if(mode.startsWith('tour:')) mode = 'tour:' + DB.activeTour;
+    saveState(); closeSheet(); renderAll(); return;
+  }
+  if('clonetour' in d){
+    const src = DB.tours.find(t=>t.id===d.clonetour);
+    const n = prompt(`Name für neue Kopie von "${src?.name}":`, 'Schweden 28');
+    if(n && addNewTour(n, d.clonetour)){ closeSheet(); renderAll(); }
+    return;
+  }
+  if('deltour' in d){
+    const t = DB.tours.find(x=>x.id===d.deltour);
+    if(t && confirm(`Tour "${t.name}" wirklich löschen?`)){
+      DB.tours = DB.tours.filter(x=>x.id!==t.id);
+      DB.items.forEach(i=>{ setTourFlag(i, t.id, false); setPackedFlag(i, t.id, false); });
+      if(DB.activeTour === t.id) DB.activeTour = DB.tours[DB.tours.length-1].id;
+      if(mode === 'tour:'+t.id) mode = '';
+      saveState(); openToursSheet(); renderAll();
+    }
+    return;
+  }
+
   // Sheet Item actions
   if(sheetMode && sheetMode.type === 'item'){
     syncItemDraftFromInputs();
     if('dn' in d){ sheetMode.draft.n = Math.max(1, sheetMode.draft.n + +d.dn); drawItemSheet(); return; }
     if('ds' in d){ sheetMode.draft.s = d.ds; drawItemSheet(); return; }
-    if('dt' in d){ sheetMode.draft[d.dt] = !sheetMode.draft[d.dt]; drawItemSheet(); return; }
+    if('dtour' in d){ setTourFlag(sheetMode.draft, d.dtour, !hasTour(sheetMode.draft, d.dtour)); drawItemSheet(); return; }
+    if('dpk' in d){ setPackedFlag(sheetMode.draft, d.dpk, !isPacked(sheetMode.draft, d.dpk)); drawItemSheet(); return; }
     if('rmphoto' in d){ sheetMode.draft.p = ''; drawItemSheet(); return; }
     if('delitem' in d){
       if(confirm('Gegenstand wirklich löschen?')){
@@ -1214,6 +1550,7 @@ document.addEventListener('click', e=>{
           if(oldName !== dr.name){
             DB.items.forEach(x=>{ if(x.t===oldName) x.t=dr.name; });
             DB.sets.forEach(s=>{ s.items = s.items.map(x=>x===oldName?dr.name:x); });
+            DB.units.forEach(u=>{ u.bags = u.bags.map(x=>x===oldName?dr.name:x); });
           }
         }
       }
@@ -1239,6 +1576,29 @@ document.addEventListener('click', e=>{
       else {
         const idx = DB.sets.findIndex(x=>x.id===sheetMode.draft.id);
         if(idx>=0) DB.sets[idx] = sheetMode.draft;
+      }
+      saveState(); closeSheet(); renderAll(); return;
+    }
+  }
+
+  // Sheet Unit actions
+  if(sheetMode && sheetMode.type === 'unit'){
+    const un = $('#u_name'); if(un) sheetMode.draft.name = un.value;
+    if('uico' in d){ sheetMode.draft.icon = d.uico; drawUnitSheet(); return; }
+    if('delunit' in d){
+      if(confirm('Funktionseinheit wirklich löschen?')){
+        DB.units = DB.units.filter(x=>x.id!==sheetMode.draft.id);
+        focusUnit = null; saveState(); closeSheet(); renderAll();
+      }
+      return;
+    }
+    if('saveunit' in d){
+      sheetMode.draft.name = (sheetMode.draft.name||'').trim();
+      if(!sheetMode.draft.name){ alert('Bitte einen Namen eingeben.'); return; }
+      if(sheetMode.isNew){ DB.units.push(sheetMode.draft); }
+      else {
+        const idx = DB.units.findIndex(x=>x.id===sheetMode.draft.id);
+        if(idx>=0) DB.units[idx] = sheetMode.draft;
       }
       saveState(); closeSheet(); renderAll(); return;
     }
@@ -1279,6 +1639,12 @@ document.addEventListener('change', e=>{
     else { sheetMode.draft.items = sheetMode.draft.items.filter(x=>x!==nm); }
     return;
   }
+  if(e.target.dataset && e.target.dataset.unitchk && sheetMode && sheetMode.type==='unit'){
+    const nm = e.target.dataset.unitchk;
+    if(e.target.checked){ if(!sheetMode.draft.bags.includes(nm)) sheetMode.draft.bags.push(nm); }
+    else { sheetMode.draft.bags = sheetMode.draft.bags.filter(x=>x!==nm); }
+    return;
+  }
   if(e.target.id === 'f_photo' && sheetMode && sheetMode.type==='item'){
     syncItemDraftFromInputs();
     const f = e.target.files[0]; if(!f) return;
@@ -1304,8 +1670,7 @@ document.addEventListener('change', e=>{
       try{
         const obj = JSON.parse(r.result);
         if(obj && Array.isArray(obj.items)){
-          DB = obj;
-          if(!Array.isArray(DB.sets)) DB.sets = JSON.parse(JSON.stringify(DEFAULT_SETS));
+          DB = migrateDB(obj);
           saveState(); closeSheet(); renderAll(); alert('Backup erfolgreich geladen!');
         } else { alert('Ungültiges Backup-Format.'); }
       }catch(err){ alert('Datei konnte nicht gelesen werden.'); }
