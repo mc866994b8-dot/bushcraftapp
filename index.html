@@ -1,0 +1,194 @@
+with open('Bushcraft-Inventar-v3.html', 'r', encoding='utf-8') as f:
+    html = f.read()
+
+# 1. Add Sync button to header
+old_header_btns = '<button class="btn" id="btnExp">Export / Drucken</button>'
+new_header_btns = '<button class="btn" id="btnSync" title="Cloud-Sync (Firebase)">☁️ Sync</button>\n      <button class="btn" id="btnExp">Export / Drucken</button>'
+assert old_header_btns in html, "Header button not found"
+html = html.replace(old_header_btns, new_header_btns, 1)
+
+# 2. Add updatedAt to makeDefaultState
+old_def_ret = "goalKg: 20,\n    theme: ''"
+new_def_ret = "goalKg: 20,\n    theme: '',\n    updatedAt: 0"
+assert old_def_ret in html, "Default state not found"
+html = html.replace(old_def_ret, new_def_ret, 1)
+
+# 3. Enhance saveState to set updatedAt and trigger pushCloud
+old_save = """function saveState(){
+  try{ localStorage.setItem(STORE_KEY, JSON.stringify(DB)); }catch(e){}
+}"""
+new_save = """function saveState(skipCloud){
+  if(!skipCloud) DB.updatedAt = Date.now();
+  try{ localStorage.setItem(STORE_KEY, JSON.stringify(DB)); }catch(e){}
+  if(!skipCloud) schedulePush();
+}
+
+// --- FIREBASE REALTIME DATABASE SYNC ---
+const SYNC_KEY = 'bi_v3_sync_cfg';
+let syncCfg = {url:'', code:''};
+let syncStatus = 'off'; // off | ok | busy | err
+let pushTimer = null;
+
+try{
+  const sc = JSON.parse(localStorage.getItem(SYNC_KEY)||'null');
+  if(sc && sc.url && sc.code) syncCfg = sc;
+}catch(e){}
+
+function syncEndpoint(){
+  if(!syncCfg.url || !syncCfg.code) return '';
+  const base = syncCfg.url.trim().replace(/\\/+$/, '');
+  const code = encodeURIComponent(syncCfg.code.trim());
+  return `${base}/bushcraft_sync/${code}.json`;
+}
+
+function updateSyncBtn(){
+  const b = $('#btnSync');
+  if(!b) return;
+  if(!syncEndpoint()){ b.textContent = '☁️ Sync'; b.classList.remove('ok','err'); return; }
+  if(syncStatus === 'busy'){ b.textContent = '☁️ ↻'; b.classList.remove('ok','err'); }
+  else if(syncStatus === 'ok'){ b.textContent = '☁️ ✓'; b.classList.add('ok'); b.classList.remove('err'); }
+  else if(syncStatus === 'err'){ b.textContent = '☁️ !'; b.classList.add('err'); b.classList.remove('ok'); }
+  else { b.textContent = '☁️ Sync'; b.classList.remove('ok','err'); }
+}
+
+function schedulePush(){
+  if(!syncEndpoint()) return;
+  clearTimeout(pushTimer);
+  pushTimer = setTimeout(pushCloud, 450);
+}
+
+async function pushCloud(){
+  const ep = syncEndpoint();
+  if(!ep) return false;
+  syncStatus = 'busy'; updateSyncBtn();
+  try{
+    const res = await fetch(ep, {
+      method: 'PUT',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(DB)
+    });
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    syncStatus = 'ok'; updateSyncBtn();
+    return true;
+  }catch(err){
+    syncStatus = 'err'; updateSyncBtn();
+    return false;
+  }
+}
+
+async function pullCloud(forceAlert){
+  const ep = syncEndpoint();
+  if(!ep) return;
+  syncStatus = 'busy'; updateSyncBtn();
+  try{
+    const res = await fetch(ep, {cache: 'no-store'});
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    if(data && Array.isArray(data.items)){
+      const cloudTs = data.updatedAt || 0;
+      const localTs = DB.updatedAt || 0;
+      if(cloudTs > localTs){
+        DB = data;
+        if(!Array.isArray(DB.sets)) DB.sets = JSON.parse(JSON.stringify(DEFAULT_SETS));
+        if(DB.theme) document.documentElement.setAttribute('data-theme', DB.theme);
+        saveState(true);
+        renderAll();
+        if(forceAlert) alert('Neuerer Stand aus der Cloud geladen!');
+      } else if(localTs > cloudTs){
+        await pushCloud();
+        if(forceAlert) alert('Lokaler Stand wurde in die Cloud hochgeladen!');
+      } else {
+        if(forceAlert) alert('Alles ist bereits auf dem aktuellen Stand.');
+      }
+      syncStatus = 'ok'; updateSyncBtn();
+    } else {
+      // Cloud is empty -> upload initial local state
+      DB.updatedAt = DB.updatedAt || Date.now();
+      const ok = await pushCloud();
+      if(forceAlert) alert(ok ? 'Verbindung steht! Dein Inventar wurde in die Cloud hochgeladen.' : 'Fehler beim Hochladen. Prüfe URL & Firebase-Regeln.');
+    }
+  }catch(err){
+    syncStatus = 'err'; updateSyncBtn();
+    if(forceAlert) alert('Cloud-Sync fehlgeschlagen. Prüfe die Firebase-URL und die Datenbank-Regeln.');
+  }
+}
+
+function openSyncSheet(){
+  sheetMode = {type:'sync'};
+  $('#sh').hidden = false;
+  const active = !!syncEndpoint();
+  $('#sh').innerHTML = `
+    <div class="bd" data-x></div>
+    <div class="pn">
+      <h2>☁️ Cloud-Sync (Firebase)</h2>
+      <p class="mu">Synchronisiert dein Inventar, Gewichte, Sets &amp; Fotos automatisch zwischen Mac und iPhone.</p>
+      <div class="field">
+        <label>Firebase Realtime Database URL</label>
+        <input type="text" id="sy_url" value="${esc(syncCfg.url)}" placeholder="https://dein-projekt-default-rtdb.europe-west1.firebasedatabase.app">
+      </div>
+      <div class="field">
+        <label>Persönlicher Sync-Code (auf Mac &amp; iPhone gleich eingeben)</label>
+        <input type="text" id="sy_code" value="${esc(syncCfg.code)}" placeholder="z. B. schweden27-meinname">
+      </div>
+      <div class="row">
+        <button class="btn on" id="doSyncSave" style="width:100%;justify-content:center">Speichern &amp; synchronisieren</button>
+      </div>
+      ${active ? `
+        <div class="row">
+          <button class="btn" id="doSyncNow" style="flex:1;justify-content:center">↻ Jetzt abgleichen</button>
+          <button class="btn err" id="doSyncOff">Sync trennen</button>
+        </div>
+      ` : ''}
+      <div class="row" style="margin-top:8px">
+        <span class="mu">Status: <b>${!active ? 'Nicht verbunden' : syncStatus==='ok' ? 'Verbunden ✓' : syncStatus==='err' ? 'Fehler – URL/Regeln prüfen' : 'Aktiv'}</b></span>
+        <button class="btn" data-x>Schließen</button>
+      </div>
+    </div>
+  `;
+}"""
+assert old_save in html, "saveState not found"
+html = html.replace(old_save, new_save, 1)
+
+# 4. Add click handlers for Sync button and Sync modal
+old_click = "if(e.target.closest('#btnExp')){ openExportSheet(); return; }"
+new_click = """if(e.target.closest('#btnExp')){ openExportSheet(); return; }
+  if(e.target.closest('#btnSync')){ openSyncSheet(); return; }
+  if(e.target.closest('#doSyncSave')){
+    const u = ($('#sy_url')?.value||'').trim();
+    const c = ($('#sy_code')?.value||'').trim();
+    if(!u || !u.startsWith('https://') || !c){
+      alert('Bitte eine gültige Firebase-URL (beginnt mit https://) und einen Sync-Code eingeben.');
+      return;
+    }
+    syncCfg = {url: u, code: c};
+    try{ localStorage.setItem(SYNC_KEY, JSON.stringify(syncCfg)); }catch(err){}
+    closeSheet();
+    pullCloud(true);
+    return;
+  }
+  if(e.target.closest('#doSyncNow')){ closeSheet(); pullCloud(true); return; }
+  if(e.target.closest('#doSyncOff')){
+    syncCfg = {url:'', code:''};
+    syncStatus = 'off';
+    try{ localStorage.removeItem(SYNC_KEY); }catch(err){}
+    updateSyncBtn(); closeSheet(); return;
+  }"""
+assert old_click in html, "btnExp click not found"
+html = html.replace(old_click, new_click, 1)
+
+# 5. Trigger initial pull & visibilitychange auto-sync
+old_end = "renderAll();\n</script>"
+new_end = """renderAll();
+updateSyncBtn();
+if(syncEndpoint()) pullCloud(false);
+document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState === 'visible' && syncEndpoint()) pullCloud(false); });
+</script>"""
+assert old_end in html, "renderAll end not found"
+html = html.replace(old_end, new_end, 1)
+
+out_path = 'index.html'
+with open(out_path, 'w', encoding='utf-8') as f:
+    f.write(html)
+
+print(f"Erfolgreich erstellt: {out_path} ({len(html):,} Zeichen)")
+
